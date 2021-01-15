@@ -16,3 +16,11 @@ require_relative 'zci/import'
 require_relative 'zci/download'
 require_relative 'zci/export'
 require_relative 'zci/clean'
+
+module ZendeskAPI
+  module Error
+    class NetworkError < ZendeskAPI::Error::ClientError
+      attr_accessor :errors
+    end
+  end
+end
